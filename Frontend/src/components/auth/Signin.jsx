@@ -28,10 +28,10 @@ export default function Signin() {
     password: "",
   });
 
-  const navigate = useNavigate();
+
   const { updateNotification } = useNotification();
   const { handleLogin, authInfo } = useAuth();
-  const { isPending, isLoggedIn } = authInfo;
+  const { isPending} = authInfo;
 
   const handleChange = ({ target }) => {
     const { value, name } = target;
@@ -46,10 +46,10 @@ export default function Signin() {
     handleLogin(userInfo.email, userInfo.password);
   };
 
-  useEffect(() => {
-    // we want to move our user to somewhere else
-    if (isLoggedIn) navigate("/");
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   // we want to move our user to somewhere else
+  //   if (isLoggedIn) navigate("/");
+  // }, [isLoggedIn]);
 
   return (
     <FormContainer>
